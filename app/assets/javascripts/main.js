@@ -44,11 +44,11 @@ $(function(){
 	  e.preventDefault();
 	  let id = $(e.target).data('id');
 	   $.ajax({
-		    url: "https://hummingbird.me/search.json?",
+		    url: "http://hummingbird.me/api/v1/search/anime?",
 		    data: {i: id}   
 		})
 	  	.done(function(data){
-	    	displayAnime(data);
+	    	console.log(data)
 	  	})
 	});
 
