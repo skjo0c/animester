@@ -44,8 +44,7 @@ $(function(){
 	  e.preventDefault();
 	  let id = $(e.target).data('id');
 	   $.ajax({
-		    url: "http://hummingbird.me/api/v1/search/anime?",
-		    data: {i: id}   
+		    url: "http://hummingbird.me/api/v1/anime/" + id
 		})
 	  	.done(function(data){
 	    	console.log(data)
