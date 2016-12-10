@@ -1,21 +1,23 @@
 <div class="row">
-  <div class="col-xs-12 col-md-4">
-    <h1 class="text-center">Search Anime</h1>
+  <div class="searchcontainer">
+    <h1 class="text-center textsearch">Search Anime</h1>
 
-    <div class="row">
-      <form id="anime-search">
-        <div class="col-xs-8">
-          <input type="text" name="query" class="form-control" placeholder="Enter Anime Name">
+    <div class= "col-xs-12 col-md-6 col-md-offset-3">
+        <div class="row">
+          <form id="anime-search">
+            <span class="col-xs-4 col-xs-offset-4 searchbar">
+              <input type="text" name="query" class="form-control" placeholder="Enter Anime Name">
+            </span>
+            <span class="col-xs-2 submitbtm">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </span>
+          </form>
         </div>
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-success">Submit</button>
-        </div>
-      </form>
     </div>
 
   </div>
 
-  <div class="col-xs-12 col-md-8">
+  <div class="col-xs-12 col-md-8 col-md-offset-3">
     <div id="animes">
 
     </div>

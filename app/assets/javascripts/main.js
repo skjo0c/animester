@@ -43,12 +43,22 @@ $(function(){
  	$('#animes').on('click', 'img', function(e){
 	  e.preventDefault();
 	  let id = $(e.target).data('id');
+
 	   $.ajax({
 		    url: "http://hummingbird.me/api/v1/anime/" + id
 		})
+
 	  	.done(function(data){
-	    	console.log(data)
-	  	})
+	  		let htmlString = "";
+
+	  		console.log(data.synopsis);
+	  		// displayAnime();
+	  	});
+
+	  	// function displayAnime(data){
+	  		
+	  	// }
+	  
 	});
 
 })
