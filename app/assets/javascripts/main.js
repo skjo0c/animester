@@ -14,7 +14,7 @@ $(function(){
  	.done(function(data){
  		displayAnimes(data);
  	 });
- });
+   });
 
  	function displayAnimes(data){
 
@@ -48,19 +48,21 @@ $(function(){
 		    url: "http://hummingbird.me/api/v1/anime/" + id
 		})
 
-	  	.done(function(data){
-	  		let htmlString = "";
-
-	  		console.log(data.synopsis);
-	  		// displayAnime();
+	  	.done(function(id){
+	  		displayAnime(id);
 	  	});
-
-	  	// function displayAnime(data){
-	  		
-	  	// }
-	  
 	});
 
+		function displayAnime(id){
+
+			let container = $("#anime")
+			let htmlString = "";
+
+			container.empty();
+	  		htmlString += `<p> ${id.synopsis} </p>`;
+	  		container.append(htmlString);
+	  		// console.log(id.synopsis);
+		}
 })
 
 // $(function(){
