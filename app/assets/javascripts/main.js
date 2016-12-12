@@ -57,7 +57,7 @@ $(function(){
 
 			let container = $("#anime")
 			let htmlString = "";
-
+			
 			container.empty();
 	  		htmlString += `<p> ${id.synopsis} </p>`;
 	  		container.append(htmlString);
