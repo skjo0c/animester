@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#CORS
+gem 'rack-cors', :require => 'rack/cors'
 #carrierwave
 gem 'carrierwave'
 #installing devise
