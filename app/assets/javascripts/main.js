@@ -1,24 +1,24 @@
 $(function(){
 
-  let form = $('#anime-search');
+  let form = $('#movie-search');
   form.submit(function(e){
   	 e.preventDefault();
 
 	 $.ajax({
 	  
-	   url: 'https://hummingbird.me/search.json?',
+	   url: 'http://www.omdbapi.com/?',
 	   data: form.serialize()
 
 	 })
  	
  	.done(function(data){
- 		displayAnimes(data);
+ 		displayMovies(data);
  	 });
    });
 
- 	function displayAnimes(data){
+ 	function displayMovies(data){
 
- 		let container = $("#animes")
+ 		let container = $("#movies")
  		let htmlString = "";
  	
  		container.empty();
@@ -27,10 +27,10 @@ $(function(){
  			htmlString = `<div class="alert alert-danger text-center" role="alert">${data["Error"]}</div>`
  		}
  		else{
- 			data["search"].forEach(function(anime){
-	 			 		htmlString += `	<img src = ${anime["image"] == "N/A" ? "/images/noimage.png" : anime["image"]} data-id="${anime['link']}"/>
-	 						<p> ${anime["title"]} </p>
-	 						<p>	${anime["rank"]} </p>`;
+ 			data["search"].forEach(function(movie){
+	 			 		htmlString += `<img src=${movie["Poster"]} />
+                   <p>${movie["Title"]}</p>
+                   <p>${movie["Year"]}</p>`;
 	 	});
 
 	 	// htmlString += `<p>${data.slug}</p>`;
@@ -40,22 +40,22 @@ $(function(){
  		}
  	}
 
- 	$('#animes').on('click', 'img', function(e){
+ 	$('#movies').on('click', 'img', function(e){
 	  e.preventDefault();
 	  let id = $(e.target).data('id');
 
 	   $.ajax({
-		    url: "http://hummingbird.me/api/v1/anime/" + id
+		    url: "http://hummingbird.me/api/v1/movie/" + id
 		})
 
 	  	.done(function(id){
-	  		displayAnime(id);
+	  		displayMovie(id);
 	  	});
 	});
 
-		function displayAnime(id){
+		function displayMovie(id){
 
-			let container = $("#anime")
+			let container = $("#movie")
 			let htmlString = "";
 			
 			container.empty();
